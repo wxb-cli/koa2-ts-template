@@ -1,4 +1,4 @@
-import Router from "koa-router";
+import Router from 'koa-router';
 const router = new Router();
 
 const index = async (ctx: Router.RouterContext, next: any) => {
@@ -6,8 +6,8 @@ const index = async (ctx: Router.RouterContext, next: any) => {
     success: true,
   };
 };
-router.get("/", index);
-router.post("/", index);
+router.get('/', index);
+router.post('/', index);
 
 const json = async (ctx: Router.RouterContext, next: any) => {
   ctx.body = {
@@ -16,13 +16,13 @@ const json = async (ctx: Router.RouterContext, next: any) => {
     headers: ctx.request.headers,
   };
 };
-router.get("/json", json);
-router.post("/json", json);
+router.get('/json', json);
+router.post('/json', json);
 
 const string = async (ctx: Router.RouterContext, next: any) => {
-  ctx.body = "welcome to Koa!";
+  ctx.body = 'welcome to Koa!';
 };
-router.get("/string", string);
-router.post("/string", string);
+router.get('/string', string);
+router.post('/string', string);
 
 export default router;
